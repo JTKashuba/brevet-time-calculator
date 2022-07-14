@@ -1,0 +1,18 @@
+{% if session.matches|length is not equalto 0  %}
+<h2>You found </h2>
+<p id="results">
+  {% for match in session.matches %}
+  {{ match }}
+  {% endfor %}
+</p>
+{% endif %}
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <!-- Mismatch, already found, etc. "flashed" from Python -->
+    {% for message in messages %}
+      <p class="message">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}

@@ -1,0 +1,13 @@
+<html>
+<head>
+Database of Control Open/Close times
+</head>
+
+<body>
+{% for item in items %}
+  <h1> Control Point at {{ item.km }} kilometers</h1>
+  <p> Open Time: {{ item.open_time_field }} and Close Time: {{ item.close_time_field}} <p>
+{% endfor %}
+</body>
+
+</html>
